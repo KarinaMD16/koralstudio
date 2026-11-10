@@ -48,7 +48,7 @@ export function Principles() {
   return (
     <section id="principios" className="px-5 py-[clamp(80px,11vw,150px)]">
       <div className="mx-auto max-w-[1320px]">
-        <Chapter left="Cómo hacemos apps" right="Capítulo 03" />
+        <Chapter left="Cómo hacemos apps" right="" />
         <Reveal>
           <h2 className="display mb-[clamp(40px,6vw,72px)] mt-6 text-[clamp(44px,7vw,104px)] font-extrabold leading-[0.9]">
             <ProximityText text="Pocas cosas," />
@@ -88,7 +88,7 @@ export function Contact() {
         style={{ animationDuration: "18s" }}
       />
       <div className="relative mx-auto max-w-[1320px]">
-        <Chapter left="Contacto" right="Capítulo 04" />
+        <Chapter left="Contacto" right="" />
         <Reveal y={60}>
           <h2 className="display mt-6 text-[clamp(64px,14vw,220px)] font-extrabold leading-[0.84] tracking-[-0.04em]">
             <ProximityText text="¿Hablamos" radius={420} /><ProximityText text="?" rest={300} near={800} radius={420} />

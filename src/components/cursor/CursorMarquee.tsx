@@ -47,6 +47,7 @@ export function CursorMarquee() {
     <motion.div aria-hidden="true" style={{ x: sx, y: sy }} className="pointer-events-none fixed left-0 top-0 z-[100]">
       <motion.div
         initial={false}
+        style={{ clipPath: "none" }}
         animate={{ opacity: active ? 1 : 0, scale: active ? 1 : 0.6, x: active ? 22 : 12, y: active ? 18 : 10 }}
         transition={{ type: "spring", stiffness: 500, damping: 32, mass: 0.6 }}
         className="flex origin-top-left items-center gap-3 whitespace-nowrap rounded-full bg-ink py-2 pl-5 pr-2 text-white shadow-[0_16px_34px_-14px_rgba(20,21,43,0.55)]"

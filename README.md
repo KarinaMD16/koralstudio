@@ -58,7 +58,7 @@ Todo respeta `prefers-reduced-motion`. En móvil (< 1024 px) las tarjetas de app
 
 - **Cursores propios** (`public/cursors/*.svg`, reglas en `globals.css`): flecha por defecto, I-beam en textos y un pólipo coral en enlaces y botones. Solo con mouse.
 - **Etiqueta que sigue al mouse** (`components/cursor/CursorMarquee.tsx`): cualquier elemento con `data-cursor-marquee="Tu texto"` la muestra junto al cursor.
-- **Texto que reacciona al cursor** (`components/cursor/ProximityText.tsx`): `<ProximityText text="Hola" rest={800} near={220} radius={340} />`. Cada letra cambia de grosor según la cercanía del mouse (eje de peso de Bricolage, 200–800). Usa `rest` bajo y `near` alto para el efecto inverso.
+- **Texto que reacciona al cursor** (`components/cursor/ProximityText.tsx`): envoltorio de **Variable Proximity de React Bits** (`components/reactbits/VariableProximity.tsx`, copiado de su repo sin la fuente Roboto Flex). Uso: `<ProximityText text="Hola" rest={800} near={250} radius={260} />`. `smoothing` controla la suavidad (0.2 como en React Bits). Para el efecto inverso, `rest` bajo y `near` alto.
 - `components/cursor/pointer.ts` comparte un solo listener del mouse entre todos los componentes. Todo se desactiva en pantallas táctiles y con "reducir movimiento".
 
 ## Pendientes
