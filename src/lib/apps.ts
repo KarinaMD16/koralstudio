@@ -85,8 +85,7 @@ export const principles = [
 ];
 
 export const socials = [
-  { label: "Instagram", href: "#" },
-  { label: "TikTok", href: "#" },
-  { label: "GitHub", href: "#" },
-  { label: "X", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/koralstudioapps" },
+  { label: "TikTok", href: "https://www.tiktok.com/@koralstudioapps" },
+  { label: "X", href: "https://x.com/KoralStudio" },
 ];

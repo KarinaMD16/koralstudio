@@ -110,6 +110,8 @@ export function Contact() {
               <a
                 key={s.label}
                 href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full bg-mist px-5 py-3 text-[15px] font-semibold transition-transform hover:-translate-y-0.5"
               >
                 {s.label}
