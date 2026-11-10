@@ -120,6 +120,21 @@ body {
 }
 .ping-dot { animation: ping-dot 2s ease-out infinite; }
 
+/* ---------- Cursores propios (solo con mouse) ---------- */
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  body * {
+    cursor: url("/cursors/default.svg") 5 3, auto;
+  }
+  body :is(p, h1, h2, h3, h4, li, label, input[type="email"], input[type="text"], textarea) {
+    cursor: url("/cursors/text.svg") 16 16, text;
+  }
+  body :is(a, a *, button, button *, [data-cursor="pointer"], [data-cursor="pointer"] *, [data-cursor-marquee], [data-cursor-marquee] *) {
+    cursor: url("/cursors/pointer.svg") 16 16, pointer;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation: none !important;

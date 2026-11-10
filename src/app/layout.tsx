@@ -5,6 +5,7 @@ import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/500.css";
 import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { CursorMarquee } from "@/components/cursor/CursorMarquee";
 
 export const metadata: Metadata = {
   title: "Koral Studio · Apps pequeñas para el día a día",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="es">
       <body className="min-h-full bg-mist text-ink">
         <SmoothScroll>{children}</SmoothScroll>
+        <CursorMarquee />
       </body>
     </html>
   );

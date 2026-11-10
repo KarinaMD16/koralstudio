@@ -6,6 +6,7 @@ import { apps, type KoralApp } from "@/lib/apps";
 import { Blob } from "./Coral";
 import { CashTrackBudgets, LyricDesktop, Phone, ReadingChapter } from "./mockups";
 import { Reveal } from "./Reveal";
+import { ProximityText } from "./cursor/ProximityText";
 
 const Arrow = () => (
   <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
@@ -114,7 +115,12 @@ function AppCard({
           )}
         </div>
 
-        <div ref={visualRef} className="relative flex min-h-[460px] min-w-0 flex-[1_1_320px] items-center justify-center">
+        <div
+          ref={visualRef}
+          data-cursor-marquee={app.cta ? app.cta.label : "Muy pronto"}
+          onClick={app.cta ? () => window.open(app.cta!.href, "_blank", "noopener,noreferrer") : undefined}
+          className="relative flex min-h-[460px] min-w-0 flex-[1_1_320px] items-center justify-center"
+        >
           <Blob color={app.accentSoft} className="absolute aspect-square w-[380px] max-w-full" />
           <motion.div style={{ y: visualY }} className="relative flex w-full justify-center">
             <Visual app={app} />
@@ -134,13 +140,13 @@ export function AppsStack() {
       <div className="mx-auto max-w-[1320px]">
         <div className="label flex justify-between gap-4 text-[#A3A4BC]">
           <span>Nuestras apps</span>
-          <span>Capítulo 02</span>
+          <span>Únete a la comunidad</span>
         </div>
         <Reveal>
           <h2 className="display mb-[clamp(40px,6vw,72px)] mt-6 text-center text-[clamp(48px,10vw,152px)] font-extrabold">
-            Hechas <span className="font-light">para</span>
+            <ProximityText text="Hechas" /> <ProximityText text="para" rest={300} near={800} />
             <br />
-            <span className="font-light">tu</span> bolsillo
+            <ProximityText text="tu" rest={300} near={800} /> <ProximityText text="bolsillo" />
           </h2>
         </Reveal>
 

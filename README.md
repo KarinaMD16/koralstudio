@@ -54,6 +54,13 @@ Todo respeta `prefers-reduced-motion`. En móvil (< 1024 px) las tarjetas de app
 - Algo ligado al scroll: `const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] })` y luego `useTransform(scrollYProgress, [0, 1], [desde, hasta])` en un `style` de `motion.div`.
 - Scroll suave a una sección: los enlaces `href="#id"` ya pasan por Lenis.
 
+## Cursor y texto reactivo
+
+- **Cursores propios** (`public/cursors/*.svg`, reglas en `globals.css`): flecha por defecto, I-beam en textos y un pólipo coral en enlaces y botones. Solo con mouse.
+- **Etiqueta que sigue al mouse** (`components/cursor/CursorMarquee.tsx`): cualquier elemento con `data-cursor-marquee="Tu texto"` la muestra junto al cursor.
+- **Texto que reacciona al cursor** (`components/cursor/ProximityText.tsx`): `<ProximityText text="Hola" rest={800} near={220} radius={340} />`. Cada letra cambia de grosor según la cercanía del mouse (eje de peso de Bricolage, 200–800). Usa `rest` bajo y `near` alto para el efecto inverso.
+- `components/cursor/pointer.ts` comparte un solo listener del mouse entre todos los componentes. Todo se desactiva en pantallas táctiles y con "reducir movimiento".
+
 ## Pendientes
 
 - Enlaces reales de Instagram, TikTok, GitHub y X (`src/lib/apps.ts` → `socials`).

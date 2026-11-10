@@ -2,6 +2,7 @@ import Image from "next/image";
 import { principles, socials } from "@/lib/apps";
 import { Blob } from "./Coral";
 import { Reveal, ScrollWords } from "./Reveal";
+import { ProximityText } from "./cursor/ProximityText";
 
 function Chapter({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
   return (
@@ -16,7 +17,7 @@ export function Studio() {
   return (
     <section id="estudio" className="px-5 py-[clamp(80px,11vw,160px)]">
       <div className="mx-auto max-w-[1320px]">
-        <Chapter left="Sobre Koral" right="Capítulo 01" />
+        <Chapter left="Sobre Koral" right="¿Quiénes somos?" />
         <h2 className="display mt-[clamp(32px,5vw,64px)] text-[clamp(40px,7.6vw,116px)] font-extrabold leading-[0.92]">
           <span className="block pl-[22%]">
             <ScrollWords text="Un estudio" /> <span className="font-light"><ScrollWords text="pequeño" /></span>
@@ -50,9 +51,9 @@ export function Principles() {
         <Chapter left="Cómo hacemos apps" right="Capítulo 03" />
         <Reveal>
           <h2 className="display mb-[clamp(40px,6vw,72px)] mt-6 text-[clamp(44px,7vw,104px)] font-extrabold leading-[0.9]">
-            Pocas cosas,
+            <ProximityText text="Pocas cosas," />
             <br />
-            <span className="font-light">bien hechas.</span>
+            <ProximityText text="bien hechas." rest={300} near={800} />
           </h2>
         </Reveal>
         <ol className="border-b border-line">
@@ -90,7 +91,7 @@ export function Contact() {
         <Chapter left="Contacto" right="Capítulo 04" />
         <Reveal y={60}>
           <h2 className="display mt-6 text-[clamp(64px,14vw,220px)] font-extrabold leading-[0.84] tracking-[-0.04em]">
-            ¿Hablamos<span className="font-light">?</span>
+            <ProximityText text="¿Hablamos" radius={420} /><ProximityText text="?" rest={300} near={800} radius={420} />
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
@@ -99,6 +100,7 @@ export function Contact() {
           </p>
           <a
             href="mailto:info@koralstudio.online"
+            data-cursor-marquee="Escríbenos"
             className="mt-[30px] inline-block break-words border-b-2 border-current pb-0.5 font-display text-[clamp(22px,3.4vw,44px)] font-bold tracking-tight hover:text-coral"
           >
             info@koralstudio.online

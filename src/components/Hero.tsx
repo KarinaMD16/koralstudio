@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 import { useRef } from "react";
 import { Blob, Coral } from "./Coral";
 import { CashTrackHome, LyricPill, Phone, ReadingHome } from "./mockups";
+import { ProximityText } from "./cursor/ProximityText";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -47,10 +48,10 @@ export function Hero() {
 
       <h1 className="display mx-auto mt-6 max-w-[1320px] text-center text-[clamp(54px,11.4vw,176px)] font-extrabold sm:mt-9">
         <Line delay={0.1}>
-          Apps <span className="font-light">pequeñas</span>
+          <ProximityText text="Apps" rest={800} near={220} /> <ProximityText text="pequeñas" rest={300} near={800} />
         </Line>
         <Line delay={0.22}>
-          <span className="font-light">para el</span> día a día
+          <ProximityText text="para el" rest={300} near={800} /> <ProximityText text="día a día" rest={800} near={220} />
         </Line>
       </h1>
 
@@ -84,7 +85,7 @@ export function Hero() {
       </motion.div>
 
       {/* Escenario del arrecife: diseño fijo de 1100px que se escala completo en pantallas chicas */}
-      <div className="relative mx-auto mt-10 h-[330px] max-w-[1100px] min-[541px]:h-[450px] md:mt-14 min-[861px]:h-[640px]">
+      <div data-cursor-marquee="Conoce las apps" onClick={() => document.getElementById("apps")?.scrollIntoView({ behavior: "smooth" })} className="relative mx-auto mt-10 h-[330px] max-w-[1100px] min-[541px]:h-[450px] md:mt-14 min-[861px]:h-[640px]">
         <div className="absolute left-1/2 top-0 h-[640px] w-[1100px] -ml-[550px] origin-top scale-50 min-[541px]:scale-70 min-[861px]:scale-100">
           <motion.div style={{ scale: blobScale }} className="absolute left-1/2 top-[70px] -ml-[260px] size-[520px]">
             <Blob color="#DD5D4F" className="size-full" />
