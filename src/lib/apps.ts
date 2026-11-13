@@ -46,7 +46,7 @@ export const apps: KoralApp[] = [
     accent: "#FF4F8B",
     accentSoft: "#FF7AA8",
     onAccent: "dark",
-    cta: { label: "Microsoft Store", href: "https://apps.microsoft.com/detail/9nxfb94h16hz" },
+    cta: { label: "Microsoft Store", href: "https://lyricisland.koralstudio.online" },
     visual: "lyric",
   },
   {
