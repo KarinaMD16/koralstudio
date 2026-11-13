@@ -42,7 +42,7 @@ export const apps: KoralApp[] = [
     description:
       "Letras sincronizadas en tiempo real en una isla flotante sobre tu pantalla. Estilo karaoke, con Spotify, Apple Music, YouTube Music y más. Toma los colores del álbum; sin cuentas ni anuncios.",
     status: "Beta",
-    platforms: ["Windows"],
+    platforms: ["Windows", "Android"],
     accent: "#FF4F8B",
     accentSoft: "#FF7AA8",
     onAccent: "dark",
