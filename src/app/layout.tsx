@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   description:
     "Estudio independiente de Costa Rica que crea apps simples y honestas. Sin anuncios raros, nunca vendemos tus datos.",
   metadataBase: new URL("https://koralstudio.online"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Koral Studio",
     description: "Apps pequeñas para el día a día. Hecho en Costa Rica.",
